@@ -26,7 +26,7 @@ A full-stack web application built with the MERN stack (MongoDB, Express, React,
 • TailwindCSS (Styling)
 • react-router-dom (Routing) <br/>
 • react-toastify (Notifications)
-• Axios (For API calls)
+• Axios (For API calls) <br/><br/>
 
 
 
