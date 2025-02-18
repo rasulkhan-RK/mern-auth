@@ -16,7 +16,7 @@ connectDB();
 
 const allowOrigins = [
   "http://localhost:5175",
-  "https://mern-auth-frontend-coral.vercel.app/",
+  "https://mern-auth-frontend-coral.vercel.app",
 ];
 app.use(cookieParser());
 app.use(cors({ origin: allowOrigins, credentials: true }));
