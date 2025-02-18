@@ -15,8 +15,8 @@ const PORT = process.env.PORT || 3001;
 connectDB();
 
 const allowOrigins = [
-  "http://localhost:5175" ||
-    "https://mern-authentication-frontend-eight.vercel.app/",
+  "http://localhost:5175",
+  "https://mern-authentication-frontend-eight.vercel.app",
 ];
 app.use(cookieParser());
 app.use(cors({ origin: allowOrigins, credentials: true }));
