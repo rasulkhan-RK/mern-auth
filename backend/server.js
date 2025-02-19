@@ -19,7 +19,7 @@ const allowOrigins = [
 
 ];
 app.use(cookieParser());
-app.use(cors({ origin: allowOrigins, credentials: true }));
+app.use(cors({ origin: allowOrigins, methods: ["POST", "GET"], credentials: true }));
 app.use(express.json());
 app.use(bodyParser.json());
 
