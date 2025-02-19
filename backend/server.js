@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 3001;
 connectDB();
 
 const allowOrigins = [
-  "https://mern-auth-frontend-abl8.onrender.com"
+  "http://localhost:5175"
 
 ];
 app.use(cookieParser());
