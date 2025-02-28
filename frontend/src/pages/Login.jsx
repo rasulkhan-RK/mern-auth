@@ -21,15 +21,17 @@ const Login = () => {
       axios.defaults.withCredentials = true;
 
       if (state === "Sign Up") {
-        const { data } = await axios.post(backendUrl + "/api/auth/register", {
-          method: "POST",
-          name,
-          email,
-          password,
-          headers: {
-            "Content-Type": "application/json",
+        const { data } = await axios.post(backendUrl + "/api/auth/register",{
+            name,
+            email,
+            password,
           },
-        });
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }                                    
+      );
 
         if (data.success) {
           setIsLoggedIn(true);
@@ -41,13 +43,15 @@ const Login = () => {
         }
       } else {
         const { data } = await axios.post(backendUrl + "/api/auth/login", {
-          method: "POST",
-          email,
-          password,
-          headers: {
-            "Content-Type": "application/json",
+            email,
+            password,
           },
-        });
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }                               
+           );
 
         if (data.success) {
           setIsLoggedIn(true);
