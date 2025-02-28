@@ -22,9 +22,13 @@ const Login = () => {
 
       if (state === "Sign Up") {
         const { data } = await axios.post(backendUrl + "/api/auth/register", {
+          method: "POST",
           name,
           email,
           password,
+          headers: {
+            "Content-Type": "application/json",
+          },
         });
 
         if (data.success) {
@@ -37,8 +41,12 @@ const Login = () => {
         }
       } else {
         const { data } = await axios.post(backendUrl + "/api/auth/login", {
+          method: "POST",
           email,
           password,
+          headers: {
+            "Content-Type": "application/json",
+          },
         });
 
         if (data.success) {
