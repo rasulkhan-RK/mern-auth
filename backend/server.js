@@ -3,7 +3,7 @@ import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import "dotenv/config";
-import bodyParser from "body-parser";
+// import bodyParser from "body-parser";
 
 //local module
 import connectDB from "./config/mongodb.js";
@@ -19,8 +19,8 @@ const corsOptions = {
     "http://localhost:5175",// Local dev frontend URL (for local testing)
     "https://mern-auth-frontend-alpha-two.vercel.app",// Production frontend URL
   ],
-  methods: ["GET, POST, PUT, DELETE, OPTIONS"],
-  allowedHeaders: ["Content-Type, Authorization"],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
 };
 
@@ -28,7 +28,7 @@ app.use(cors(corsOptions));
 app.options("*", cors());
 app.use(cookieParser());
 app.use(express.json());
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
 
 //API Endpoints
 app.get("/", (req, res) => {
