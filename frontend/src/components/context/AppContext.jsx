@@ -10,7 +10,7 @@ export const AppContext = createContext();
 export const AppContextProvider = (props) => {
   axios.defaults.withCredentials = true;
 
-  const backendUrl = "https://mern-auth-back-seven.vercel.app";
+  const backendUrl = "https://mern-auth-backend-blush.vercel.app";
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userData, setUserData] = useState(false);
 
