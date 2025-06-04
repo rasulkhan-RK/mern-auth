@@ -16,18 +16,16 @@ connectDB();
 
 const corsOptions = {
   origin: [
-    // "http://localhost:5175", // Local dev frontend URL (for local testing)
-    "https://mern-auth-frontend-alpha-two.vercel.app/", // Production frontend URL
+    "http://localhost:5175",// Local dev frontend URL (for local testing)
+    "https://mern-auth-frontend-alpha-two.vercel.app",// Production frontend URL
   ],
-  credentials: true, 
-  allowedHeaders: "Content-Type, Authorization", 
-  methods: "GET, POST, PUT, DELETE, OPTIONS", 
+  methods: ["GET, POST, PUT, DELETE, OPTIONS"],
+  allowedHeaders: ["Content-Type, Authorization"],
+  credentials: true,
 };
 
-app.use(cors({
-   origin: 'https://mern-auth-frontend-alpha-two.vercel.app',
-  credentials: true,
-})); 
+app.use(cors(corsOptions)); 
+app.options("*", cors());
 app.use(cookieParser());
 app.use(express.json());
 app.use(bodyParser.json());
