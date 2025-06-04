@@ -14,17 +14,17 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 connectDB();
 
-// const corsOptions = {
-//   origin: [
-//     "http://localhost:5175", // Local dev frontend URL (for local testing)
-//     "https://mern-auth-frontend-alpha-two.vercel.app", // Production frontend URL
-//   ],
-//   credentials: true, 
-//   allowedHeaders: "Content-Type, Authorization", 
-//   methods: "GET, POST, PUT, DELETE, OPTIONS", 
-// };
+const corsOptions = {
+  origin: [
+    // "http://localhost:5175", // Local dev frontend URL (for local testing)
+    "https://mern-auth-frontend-alpha-two.vercel.app/", // Production frontend URL
+  ],
+  credentials: true, 
+  allowedHeaders: "Content-Type, Authorization", 
+  methods: "GET, POST, PUT, DELETE, OPTIONS", 
+};
 
-app.use(cors()); 
+app.use(cors(corsOptions)); 
 app.use(cookieParser());
 app.use(express.json());
 app.use(bodyParser.json());
