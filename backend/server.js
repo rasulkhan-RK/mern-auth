@@ -24,7 +24,10 @@ const corsOptions = {
   methods: "GET, POST, PUT, DELETE, OPTIONS", 
 };
 
-app.use(cors(corsOptions)); 
+app.use(cors({
+   origin: 'https://mern-auth-frontend-alpha-two.vercel.app',
+  credentials: true,
+})); 
 app.use(cookieParser());
 app.use(express.json());
 app.use(bodyParser.json());
